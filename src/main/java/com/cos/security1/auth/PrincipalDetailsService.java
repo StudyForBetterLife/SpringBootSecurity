@@ -21,7 +21,8 @@ public class PrincipalDetailsService implements UserDetailsService {
     // 시큐리티 session => Authentication => UserDetails
     // loadUserByUsername 메소드의 리턴값 UserDetails이 Authentication 인자로 들어간다.
     // Authentication은 시큐리티 session의 인자로 들어간다.
-    // 시큐리티Session(Authentication(UserDetails)))
+    // 시큐리티 Session(Authentication(UserDetails)))
+    // loadUserByUsername 메소드 종료시 @AuthenticationPrincipal 어노테이션이 만들어진다.
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User userEntity = userRepository.findByUsername(username);
